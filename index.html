@@ -20,7 +20,7 @@ body.dark-mode {
   color: #e0e0e0;
 }
 
-/* ===== LOADING ===== */
+/* Spinner loading */
 #loadingScreen {
   position: fixed;
   inset: 0;
@@ -55,7 +55,6 @@ body.dark-mode {
   animation-delay: calc(-1.2s + (var(--i) * 0.1s));
 }
 
-/* ===== TOP BAR ===== */
 #topBar {
   position: fixed;
   top: 10px;
@@ -67,7 +66,7 @@ body.dark-mode {
   z-index: 10001;
 }
 
-/* ===== VIDEO ===== */
+/* VIDEO */
 .video-container {
   width: 75%;
   margin: 48px auto 20px auto;
@@ -79,7 +78,7 @@ body.dark-mode {
   cursor: pointer;
 }
 
-/* PLAY ICON */
+/* ICON PLAY */
 .play-icon {
   position: absolute;
   top: 50%;
@@ -91,33 +90,37 @@ body.dark-mode {
   pointer-events: none;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 .button-group {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 .button-group a {
   background: #ff0066;
   color: white;
-  padding: 26px 60px;      /* TO HƠN */
+  padding: 26px 60px;
   border-radius: 18px;
-  font-size: 30px;         /* CHỮ TO */
+  font-size: 30px;
   font-family: 'Mali', sans-serif;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 0 18px #ff0066;
+  box-shadow: 0 0 12px #ff0066;
 }
 .button-group a:hover {
-  box-shadow: 0 0 30px #ff0066;
+  box-shadow: 0 0 25px #ff0066;
   transform: translateY(-3px);
 }
-.button-group a:active {
-  transform: scale(1.1);
+
+/* MOBILE: đẩy ảnh xuống */
+@media (max-width: 768px) {
+  .video-container {
+    margin-top: 80px;
+  }
 }
 
-/* ===== BLUR ADS ===== */
+/* ADS */
 .blurred {
   filter: blur(6px);
   pointer-events: none;
@@ -164,6 +167,14 @@ body.dark-mode {
   </div>
 </div>
 
+<div id="topBar" style="display:none;">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle" />
+    <span class="slider"></span>
+  </label>
+  <button id="searchBtn" type="button"></button>
+</div>
+
 <h1 style="display:none;">🔥Hack 8 Ball Pool Free IOS🔥</h1>
 
 <div id="main-content" style="display:none;">
@@ -171,16 +182,19 @@ body.dark-mode {
     <img src="fakevideo.jpg" id="fakeVideo">
     <i class="fa-solid fa-play play-icon"></i>
 
-    <!-- CHỈ CÒN 1 NÚT -->
     <div class="button-group">
       <a href="https://drive.google.com/file/d/14Cot6riUZyJPT9tJ6I2VFPkumd80DzZ7/view" target="_blank">
         🔥 FILE HACK IOS 🔥
       </a>
     </div>
+
+    <p style="font-size: 24px; margin-top: 3em;">
+      Mua Hack Vip Inbox Admin (chỉ mua hack ad mới hỗ trợ cài, free tự cài nhé mấy ông)
+      Zalo 0378601674 Giá Chỉ 150k Dùng Vĩnh Viễn
+    </p>
   </div>
 </div>
 
-<!-- ADS -->
 <div class="overlay-ad" id="adBox">
   <button class="close-btn" id="closeAd">X</button>
   <img src="quangcao.jpg">
@@ -191,14 +205,37 @@ body.dark-mode {
 window.addEventListener("load", () => {
   setTimeout(() => {
     loadingScreen.style.display = "none";
+    topBar.style.display = "flex";
     document.querySelector("h1").style.display = "block";
     document.getElementById("main-content").style.display = "block";
   }, 500);
 });
 
-/* CLICK ẢNH → YOUTUBE (KHÔNG CÒN LỖI TRANG) */
+const searchLink = "https://vt.tiktok.com/ZSHtXajUXBFDN-bqkDz/";
+
+const modeToggle = document.getElementById("modeToggle");
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  modeToggle.checked = true;
+}
+modeToggle.addEventListener("change", () => {
+  if (modeToggle.checked) {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("darkMode", "disabled");
+  }
+});
+
+/* CLICK ẢNH → YOUTUBE */
 document.getElementById("fakeVideo").addEventListener("click", () => {
   window.open("https://www.youtube.com/@PUiOSss", "_blank");
+});
+
+/* SEARCH */
+document.getElementById("searchBtn").addEventListener("click", () => {
+  window.open(searchLink, "_blank");
 });
 
 /* ADS */
@@ -209,7 +246,7 @@ setTimeout(() => {
 }, 1350);
 
 closeAd.onclick = () => {
-  window.open("https://vt.tiktok.com/ZSHtXajUXBFDN-bqkDz/", "_blank");
+  window.open(searchLink, "_blank");
   adBox.style.display = "none";
   videoContainer.classList.remove("blurred");
   overlayBlock.style.display = "none";

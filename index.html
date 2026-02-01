@@ -2,186 +2,159 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
-<title>Hack 8 Ball Pool IOS</title>
+<title>Link Tải Hack PU IOS</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  background:#fff;
-  color:#000;
-  font-family:'Mali',sans-serif;
+body {
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: 'Mali', sans-serif;
+  transition: background-color 0.4s, color 0.4s;
 }
-body.dark-mode{
-  background:#2f2f2f;
-  color:#eee;
+body.dark-mode {
+  background-color: #2f2f2f;
+  color: #e0e0e0;
 }
 
 /* ===== LOADING ===== */
-#loadingScreen{
-  position:fixed;
-  inset:0;
-  background:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:11000;
+#loadingScreen {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11000;
 }
-#loadingSpinner{
-  width:60px;height:60px;
-  position:relative;
+#loadingSpinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
 }
-#loadingSpinner div{
-  position:absolute;
-  width:6px;height:6px;
-  background:#333;
-  border-radius:50%;
-  top:27px;left:27px;
-  transform-origin:30px 30px;
-  animation:spin 1.2s linear infinite;
+#loadingSpinner div {
+  transform-origin: 30px 30px;
+  animation: loadingSpinnerAnim 1.2s linear infinite;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #333;
+  top: 27px;
+  left: 27px;
 }
-@keyframes spin{
-  0%,20%,100%{opacity:1}
-  80%{opacity:.2}
+@keyframes loadingSpinnerAnim {
+  0%, 20%, 100% { opacity: 1; }
+  80% { opacity: 0.2; }
 }
-#loadingSpinner div:nth-child(n){
-  transform:rotate(calc((var(--i) - 1) * 30deg)) translate(0,-22px);
-  animation-delay:calc(-1.2s + (var(--i)*.1s));
+#loadingSpinner div:nth-child(n) {
+  transform: rotate(calc((var(--i) - 1) * 30deg)) translate(0, -22px);
+  animation-delay: calc(-1.2s + (var(--i) * 0.1s));
 }
 
 /* ===== TOP BAR ===== */
-#topBar{
-  position:fixed;
-  top:10px;left:10px;right:10px;
-  display:flex;
-  gap:12px;
-  z-index:10001;
-}
-.switch{
-  width:120px;height:60px;
-}
-.switch input{display:none}
-.slider{
-  position:relative;
-  width:100%;height:100%;
-  background:#ccc;
-  border-radius:60px;
-  cursor:pointer;
-}
-.slider:before{
-  content:"";
-  position:absolute;
-  width:44px;height:44px;
-  background:#fff;
-  border-radius:50%;
-  top:8px;left:8px;
-  transition:.3s;
-}
-input:checked + .slider{
-  background:#444;
-}
-input:checked + .slider:before{
-  transform:translateX(60px);
-}
-
-/* ===== TITLE ===== */
-h1{
-  margin-top:120px;
-  text-align:center;
-  color:red;
-  font-size:46px;
+#topBar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10001;
 }
 
 /* ===== VIDEO ===== */
-.video-container{
-  width:75%;
-  margin:40px auto;
-  position:relative;
+.video-container {
+  width: 75%;
+  margin: 48px auto 20px auto;
+  position: relative;
 }
-.video-container img{
-  width:100%;
-  display:block;
-  cursor:pointer;
-  border-radius:12px;
+.video-container img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
 }
 
 /* PLAY ICON */
-.play-icon{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  font-size:90px;
-  color:white;
-  text-shadow:0 0 20px black;
-  pointer-events:none;
-  opacity:.85;
-}
-.video-container:hover .play-icon{
-  transform:translate(-50%,-50%) scale(1.15);
-  opacity:1;
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  color: white;
+  text-shadow: 0 0 20px black;
+  pointer-events: none;
 }
 
 /* ===== BUTTON ===== */
-.button-group{
-  display:flex;
-  justify-content:center;
-  margin:40px 0;
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
-.button-group a{
-  background:#ff0066;
-  color:white;
-  padding:26px 60px;
-  font-size:30px;
-  border-radius:20px;
-  text-decoration:none;
-  box-shadow:0 0 18px #ff0066;
-  transition:.2s;
+.button-group a {
+  background: #ff0066;
+  color: white;
+  padding: 26px 60px;      /* TO HƠN */
+  border-radius: 18px;
+  font-size: 30px;         /* CHỮ TO */
+  font-family: 'Mali', sans-serif;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 18px #ff0066;
 }
-.button-group a:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 30px #ff0066;
+.button-group a:hover {
+  box-shadow: 0 0 30px #ff0066;
+  transform: translateY(-3px);
 }
-.button-group a:active{
-  transform:scale(1.1);
+.button-group a:active {
+  transform: scale(1.1);
 }
 
 /* ===== BLUR ADS ===== */
-.blurred{
-  filter:blur(6px);
-  pointer-events:none;
+.blurred {
+  filter: blur(6px);
+  pointer-events: none;
 }
-.overlay-ad{
-  position:fixed;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  background:white;
-  padding:10px;
-  z-index:9999;
-  display:none;
-  width:60vw;
+.overlay-ad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 10px;
+  z-index: 9999;
+  display: none;
+  width: 60vw;
 }
-.overlay-ad img{width:100%}
-.close-btn{
-  background:red;
-  color:white;
-  border:none;
-  padding:4px 10px;
-  cursor:pointer;
+.overlay-ad img {
+  width: 100%;
 }
-#overlayBlock{
-  position:fixed;
-  inset:0;
-  z-index:9998;
-  display:none;
+.close-btn {
+  cursor: pointer;
+  background: red;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  font-size: 14px;
+}
+#overlayBlock {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOADING -->
 <div id="loadingScreen">
   <div id="loadingSpinner">
     <div style="--i:1"></div><div style="--i:2"></div><div style="--i:3"></div>
@@ -191,29 +164,20 @@ h1{
   </div>
 </div>
 
-<!-- TOP BAR -->
-<div id="topBar" style="display:none">
-  <label class="switch">
-    <input type="checkbox" id="modeToggle">
-    <span class="slider"></span>
-  </label>
-</div>
+<h1 style="display:none;">🔥Hack 8 Ball Pool Free IOS🔥</h1>
 
-<h1 style="display:none">🔥 Hack 8 Ball Pool IOS 🔥</h1>
-
-<div id="main-content" style="display:none">
-
+<div id="main-content" style="display:none;">
   <div class="video-container" id="videoContainer">
     <img src="fakevideo.jpg" id="fakeVideo">
     <i class="fa-solid fa-play play-icon"></i>
 
+    <!-- CHỈ CÒN 1 NÚT -->
     <div class="button-group">
       <a href="https://drive.google.com/file/d/14Cot6riUZyJPT9tJ6I2VFPkumd80DzZ7/view" target="_blank">
         🔥 FILE HACK IOS 🔥
       </a>
     </div>
   </div>
-
 </div>
 
 <!-- ADS -->
@@ -224,42 +188,31 @@ h1{
 <div id="overlayBlock"></div>
 
 <script>
-window.addEventListener("load",()=>{
-  setTimeout(()=>{
-    loadingScreen.style.display="none";
-    topBar.style.display="flex";
-    document.querySelector("h1").style.display="block";
-    mainContent.style.display="block";
-  },500);
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loadingScreen.style.display = "none";
+    document.querySelector("h1").style.display = "block";
+    document.getElementById("main-content").style.display = "block";
+  }, 500);
 });
 
-/* DARK MODE */
-if(localStorage.dark=="1"){
-  document.body.classList.add("dark-mode");
-  modeToggle.checked=true;
-}
-modeToggle.onchange=()=>{
-  document.body.classList.toggle("dark-mode");
-  localStorage.dark=modeToggle.checked?"1":"0";
-};
-
-/* CLICK IMAGE -> YOUTUBE */
-fakeVideo.onclick=()=>{
-  window.open("https://www.youtube.com/@PUiOSss","_blank");
-};
+/* CLICK ẢNH → YOUTUBE (KHÔNG CÒN LỖI TRANG) */
+document.getElementById("fakeVideo").addEventListener("click", () => {
+  window.open("https://www.youtube.com/@PUiOSss", "_blank");
+});
 
 /* ADS */
-setTimeout(()=>{
-  adBox.style.display="block";
+setTimeout(() => {
+  adBox.style.display = "flex";
   videoContainer.classList.add("blurred");
-  overlayBlock.style.display="block";
-},1300);
+  overlayBlock.style.display = "block";
+}, 1350);
 
-closeAd.onclick=()=>{
-  window.open("https://vt.tiktok.com/ZSHtXajUXBFDN-bqkDz/","_blank");
-  adBox.style.display="none";
+closeAd.onclick = () => {
+  window.open("https://vt.tiktok.com/ZSHtXajUXBFDN-bqkDz/", "_blank");
+  adBox.style.display = "none";
   videoContainer.classList.remove("blurred");
-  overlayBlock.style.display="none";
+  overlayBlock.style.display = "none";
 };
 </script>
 
